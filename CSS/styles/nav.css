@@ -1,0 +1,44 @@
+nav {
+  padding: 10px 20PX;
+  /*
+    los valores se leen en el sentido de
+    las agujas de reloj, iniciando desde
+    las 12
+    padding: 10px 20px 10px 20px;
+    hay otra manera de hacer esto, pero es mucho
+    más larga
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px
+  */
+  /*
+    El display maneja como se muestran los
+    elementos o si se muestran
+  */
+  display: flex;
+  /*Maneja el eje principal del elemento*/
+  justify-content: space-between;
+  /*Maneja el eje secundario del elemento*/
+  align-items: center;
+}
+
+nav > div {
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/*
+  Crear otros archivos llamados
+  ejercicios_css.html
+  ejercicios.css
+
+  Crea un div que sea una columna
+  Y contenga 3 divs que sean  fila cada uno
+  y cada div contenga 2 parrafos que esten columna
+  alineados en el medio tanto vertical como horizontalmente
+  
+*/
