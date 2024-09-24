@@ -24,8 +24,8 @@ header > div > img {
   gap: 12px;
   color:white;
   /*
-  Alinear texto
-  text-align: center;
+    Alinear texto
+    text-align: center;
   */
 }
 
@@ -67,6 +67,29 @@ header > div > img {
   justify-content: center;
   align-items: center;
 }
+
+/*
+  PSEUDO ELEMENTOS
+  Estos se utilizan para darle estilos a partes
+  específicas de un elemento
+  lista
+  ::after (después del contenido)
+  ::before (antes del contenido)
+  ::first-letter (primera letra)
+  ::first-line (primera línea)
+  ::placeholder (texto de un input)
+*/
+/*
+input::placeholder {
+  color: black;
+}
+p::after {
+  content: "🚀";
+  font-size: 24px;
+}
+*/
+
+
 
 @keyframes fondo {
   0%{

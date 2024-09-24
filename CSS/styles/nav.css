@@ -30,6 +30,17 @@ nav {
   font-size: var(--texto-parrafo);
   /*degradado*/
   background: linear-gradient(90deg, var(--color-principal), rgb(5, 5, 174));
+  /*
+    Position
+    static: por defecto
+    relative: el elemento conserva su espacio en html pero se puede mover
+    absolute: el elemento se queda fijado en la posición que se le indique
+    fixed: el elemento se queda fijado en la posición que se le indique y no ocupa un espacio en el html
+    sticky: el elemento se queda fijado en la posición que se le indique y ocupa un espacio en el html
+  */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav > div {
@@ -83,6 +94,55 @@ nav > div {
   cursor: pointer;
   /*transition: propiedad tiempo efecto;*/
   transition: background-color 0.5s, color 0.5s;
+}
+
+.menu {
+  display: none;
+}
+
+/*
+  QUERY RESPONSIVE
+*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body{
+    background-color: red;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body{
+    background-color: green;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body{
+    background-color: aqua;
+  }
+  .menu{
+    display: flex;
+  }
+  .menu-responsive{
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  body{
+    background-color: blue;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body{
+    background-color: yellow;
+  }
 }
 
 /*
