@@ -1,0 +1,112 @@
+main {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+main > aside {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  font-size: 10px;
+}
+
+main > aside > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+main > aside > div > i {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    grid-template-columns: 6% 94%;
+  }
+
+  main > aside {
+    display: flex;
+  }
+}
+
+main > #principal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+main > #principal > #categorias {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow-x: hidden
+}
+
+main > #principal > #categorias > button {
+  padding: 10px 10px;
+  background-color: transparent;
+  border: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+main > #principal > #categorias > button:first-child {
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: solid 1px var(--complementary);
+  background-color: var(--complementary);
+  color: var(--text);
+  font-weight: 600;
+}
+
+main > #principal > #videos {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 20px;
+  width: 96%;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.video > img {
+  border-radius: 12px;
+}
+
+.video > div {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  gap: 10px;
+}
+
+.video > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  main > #principal > #videos {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main > #principal > #videos {
+    grid-template-columns: 33% 33% 33%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  main > #principal > #videos {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
