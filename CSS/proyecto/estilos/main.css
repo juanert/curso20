@@ -23,16 +23,6 @@ main > aside > div > i {
   font-size: 14px;
 }
 
-@media screen and (min-width: 768px) {
-  main {
-    grid-template-columns: 6% 94%;
-  }
-
-  main > aside {
-    display: flex;
-  }
-}
-
 main > #principal {
   display: flex;
   flex-direction: column;
@@ -94,6 +84,13 @@ main > #principal > #videos {
 }
 
 @media screen and (min-width: 768px) {
+  main {
+    grid-template-columns: 6% 94%;
+  }
+
+  main > aside {
+    display: flex;
+  }
   main > #principal > #videos {
     grid-template-columns: 50% 50%;
   }
