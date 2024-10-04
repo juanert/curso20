@@ -1,0 +1,23 @@
+/*
+  Mi primera variable
+$base-color: blue
+
+/*
+  Mixings
+  Son similares a las variables, sin embargo. Puede almacenar lógica más compleja
+  que una variable e incluso tener variaciones. Son similares a la Funciones en
+  cualquier otro lenguaje de programación
+
+@mixin columna($horizontal: center, $vertical: center)
+  display: flex
+  flex-direction: column
+  justify-content: $vertical
+  align-items: $horizontal
+
+@mixin grid($columnas)
+  display: grid
+  grid-template-columns: $columnas
+
+*
+  margin: 0
+  padding: 0

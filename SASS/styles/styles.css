@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* Mi primera variable */
+/* Mixings
+ * Son similares a las variables, sin embargo. Puede almacenar lógica más compleja
+ * que una variable e incluso tener variaciones. Son similares a la Funciones en
+ * cualquier otro lenguaje de programación */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#inicial {
+  color: blue;
+}
+#inicial p {
+  background-color: red;
+}
+
+.columna-centrada {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.columna-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 20vh;
+}
+
+.blogs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.blogs .blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}/*# sourceMappingURL=styles.css.map */

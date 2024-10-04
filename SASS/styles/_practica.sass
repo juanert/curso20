@@ -1,0 +1,61 @@
+/*
+  Crea un mixing que me permita colocar un elemento
+  como grid o flex, y que además me permita manejar
+  su alineacion del eje principal o el eje secundario
+
+@mixin display($display, $justify, $align, $columnas, $direction: row)
+  display: $display
+  @if $display == grid
+    grid-template-columns: $columnas
+  @if $display == flex
+    justify-content: $justify
+    align-items: $align
+    flex-direction: $direction
+    @if $justify == center or $align == center
+      background: blue
+      /*
+        Operadores relacionales
+        > Mayor que
+        >= Mayor o igual que
+        < Menor que
+        <= Menor o igual que
+        == Comparacion
+      /*
+        Operador lógicos
+        AND: Significa "Y", ambas condiciones deben ser ciertas
+        OR: Significa "O" Al menos una condicion debe de cumplirse
+        NOT: Significa "No" significa lo contrario
+  @else
+    /*
+      Se activaria en caso de que el valor no sea flex
+    /*
+
+/*
+  Utiliza el mixin para creear:
+  - Un grid con 4 columnas
+  - Una fila verticalmente centrada y horizontalmente a la derecha
+  - Una fila verticalmente en el fondo y horizontalmente a la izquierda
+  - Una columna verticalmente abajo y horizontalmente centrada
+  
+.selector
+  @include display(grid, center, center, repeat(4,1fr))
+
+.selector
+  @include display(flex, flex-end, center, null)
+
+.selector
+  @include display(flex, flex-start, end, null)
+
+.selector
+  @include display(flex, flex-end, center, null, column)
+
+/*
+  Proyecto final de SASS
+  Puedes elegir entre los dos siguientes proyectos:
+  1) Realizar una copia de la página de perfil de una cuenta de instagram (Ejercicio retador)
+  2) Realizar un blog. Esteb debe contener una barra de navegación del sitio web, un header
+  y varios blogs en un grid que deben de mostrar una imagen, un titulo, una breve descripción
+  y un botón de leer más. La página debe verse creible, es decir. Sentirse como que es un producto
+  real y no una simple practica de un estudiante
+
+  Fecha de entrega: 10/10/24
