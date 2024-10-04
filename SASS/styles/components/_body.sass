@@ -1,0 +1,17 @@
+#inicial
+  color: $base-color
+  p
+    background-color: red
+
+.columna-centrada
+  @include columna()
+  height: 30vh
+
+.columna-top
+  @include columna(center, flex-start)
+  height: 20vh
+
+.blogs
+  @include grid(1fr 1fr 1fr)
+  .blog
+    @include columna(center, flex-start)
