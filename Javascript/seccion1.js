@@ -125,3 +125,29 @@ if (edad < 0 || edad > 130){
   Fecha de entrega: 22/10/2024
 */
 
+var numero1 = 5;
+var numero2 = 3;
+var operador = "+";
+
+if(operador === "+"){
+  console.log(numero1 + numero2);
+}
+else if(operador === "-"){
+  console.log(numero1 - numero2);
+}
+else if(operador === "*"){
+  console.log(numero1 * numero2);
+}
+else if(operador === "/"){
+  console.log(numero1 / numero2);
+}
+else if(operador === "%"){
+  console.log(numero1 % numero2);
+}
+else if(operador === "**"){
+  console.log(numero1 ** numero2);
+}
+else {
+  console.log("Operador no valido");
+}
+
