@@ -695,3 +695,335 @@ const inventario_mercado = [
   6. Imprime el proveedor (objeto) de leche de méxico
   7. Imprime la vida util del queso de Oveja
 */
+
+//Metodos de array
+frutas = ["Manzana", "Pera", "Uva", "Sandia"];
+//Longitud del array
+console.log(frutas.length);
+//Agregar un elemento al final del array
+frutas.push("Mango");
+//Agregar un elemento al inicio del array
+frutas.unshift("Fresa");
+//Eliminar el ultimo elemento del array
+frutas.pop();
+//Eliminar el primer elemento del array
+frutas.shift();
+//Eliminar un elemento en una posicion especifica
+frutas.splice(1, 1);
+//Eliminar un elemento en una posicion especifica y agregar un nuevo elemento
+frutas.splice(1, 1, "Uva");
+//Concatenar dos arrays
+var frutas2 = ["Pera", "Kiwi"];
+frutas = frutas.concat(frutas2);
+console.log(frutas);
+// [Manzana, Uva, Sandia, Pera, Kiwi]
+//Ordenar un array
+console.log(frutas.sort());
+//[Kiwi, Manzana, Pera, Sandia, Uva]
+//Invertir un array
+console.log(frutas.reverse());
+//[Uva, Sandia, Pera, Manzana, Kiwi]
+//Buscar un elemento en un array (devuelve la posicion)
+console.log(frutas.indexOf("Uva"));
+//Buscar un elemento en un array (devuelve true o false)
+console.log(frutas.includes("Uva"));
+//cortar un array
+console.log(frutas.slice(1, 3));
+// [Sandia, Pera] (no incluye el ultimo elemento)
+
+//Curiosidad, los strings tambien pueden ser tratados como arrays
+var texto = "Hola, soy un texto";
+console.log(texto[4]);
+
+//Callback
+// Es una función que se pasa como argumento a otra función
+
+function calcular_descuento(precio, descuento){
+  return precio - (precio * descuento);
+}
+
+function comprar(producto = "", precio = 0,  funcioncita){
+  if(producto === "manzana"){
+    return funcioncita(precio, 0.1);
+  } else {
+    return precio;
+  }
+}
+
+console.log(comprar("manzana", 100, calcular_descuento));
+
+//[Kiwi, Manzana, Pera, Sandia, Uva]
+//filtrar un array
+console.log(frutas.filter(
+  (fruta) => fruta.length > 4)
+);
+//otro ejemplo de filter
+console.log(frutas.filter(
+  fruta => fruta.includes("a")
+));
+
+/*
+  Ejercicios de metodos de arrays
+  1. Crea una función que reciba un array de numeros y devuelva la suma de todos los numeros.
+  2. Crea una función que reciba un array de numeros y devuelva el promedio de todos los numeros.
+  3. Crea una función que reciba un array de numeros y devuelva el numero mayor.
+  4. Crea una función que reciba un array de numeros y devuelva el numero menor.
+  5. Crea una función que reciba un array de numeros y devuelva un array con los numeros pares.
+  6. Crea una función que reciba un array de numeros y devuelva un array con los numeros impares.
+  7. Crea una función que reciba un array de ciudades y devuelva un array con las ciudades que empiezan con la letra "M".
+  8. Crea una función que reciba un array de nombres y verifique si el nombre "Juan" se encuentra en el array y devuelva su posicion.
+*/
+
+//Ciclos (Loops)
+/*
+  Los ciclos nos permiten repetir un bloque de codigo
+  mientras se cumpla una condicion
+*/
+
+let carros = ["Toyota", "Nissan", "Chevrolet", "Ford"];
+//For
+for(let i = 0; i < carros.length; i++){
+  console.log(carros[i]);
+}
+
+//While
+let i = 0;
+while(i < carros.length){
+  console.log(carros[i]);
+  if(i === 3){
+    break;
+  }
+  i++;
+}
+
+//Do while
+let j = 0;
+do {
+  console.log(carros[j]);
+  j++;
+} while(j < 0);
+
+//For of (Especial para recorrer arrays)
+for(let carro of carros){
+  console.log(carro);
+}
+
+let persona = {
+  nombre: "Juan",
+  apellido: "Perez",
+  edad: 20
+}
+
+//For in (Especial para recorrer objetos)
+for(let propiedad in persona){
+  console.log(persona[propiedad]);
+}
+
+let comidas = [
+  ["Hamburguesa", "Pizza", "Tacos"],
+  ["Sushi", "Ramen", "Gyoza"],
+  ["Pasta", "Lasagna", "Ravioli"]
+];
+
+for(let comida of comidas){
+  for(let platillo of comida){
+    console.log(platillo);
+  }
+}
+
+let compra = [
+  {
+    producto: "Manzana",
+    precio: 1.5,
+    tipos: ["Golden", "Red", "Green"],
+    cantidad: 10
+  },
+  {
+    producto: "Pera",
+    precio: 2.5,
+    tipos: ["Bartlett", "Anjou", "Bosc"],
+    cantidad: 5
+  }
+]
+
+/*
+  Ejercicios de ciclos
+  1. Crea un ciclo que imprima los numeros del 1 al 100.
+  2. Crea un ciclo que permita imprimir cada uno de los valores de la variable compra.
+  3. Crea un ciclo que imprima los numeros pares del 0 al 100 de dos en dos. (2, 6, 10, 14, 18, ...)
+  4. Realiza el ejercicio de Fibonacci utilizando un ciclo. (Debes imprimir solo los primeros 15 valores)
+*/
+
+//1
+for(let i = 1; i <= 100; i++){
+  console.log(i);
+}
+
+//2
+for(let producto of compra){
+  for(let propiedad in producto){
+    if (Array.isArray(producto[propiedad])){
+      for(let tipo of producto[propiedad]){
+        console.log(tipo);
+      }
+    } else {
+      console.log(producto[propiedad]);
+    }
+  }
+}
+
+//3
+let contar = false;
+for(let i = 0; i <= 100; i += 2){
+  if(contar){
+    console.log(i);
+  }
+  contar = !contar;
+}
+
+//4
+let resultado_anterior = 0;
+let resultado_actual = 1;
+for(let i = 0; i < 15; i++){
+  console.log(resultado_actual);
+  let temporal = resultado_actual;
+  resultado_actual = resultado_anterior + resultado_actual;
+  resultado_anterior = temporal;
+}
+
+//Programación orientada a objetos
+/*
+  Un objeto puede contener propiedades o metodos
+  Una propiedad es una caracteristica del objeto (color, tamaño, etc.)
+  Un metodo es una funcion del objeto (correr, saltar, etc.)
+*/
+
+let carro = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  anio: 2021,
+  color: "Rojo",
+  encender: function(){
+    return "El carro está encendido";
+  },
+  apagar: () => {
+    return "El carro está apagado";
+  }
+}
+
+console.log(carro.encender());
+
+//Clases
+/*
+  Las clases son plantillas para crear objetos
+  Las clases pueden tener propiedades y metodos
+*/
+
+class Personaje {
+  constructor(nombre, vida, ataque){
+    this.nombre = nombre;
+    this.vida = vida;
+    this.ataque = ataque;
+  }
+
+  decirInformacion(){
+    return `Hola soy, ${this.nombre}, tengo ${this.vida} de vida y mi ataque es de ${this.ataque}`;
+  }
+}
+
+let personaje1 = new Personaje("Gandalf", 100, 50);
+let personaje2 = new Personaje("Frodo", 50, 20);
+let personaje3 = new Personaje("Aragorn", 150, 70);
+
+console.log(personaje1.decirInformacion());
+console.log(personaje2.decirInformacion());
+console.log(personaje3.decirInformacion());
+
+//Herencia
+/*
+  La herencia nos permite crear una clase a partir de otra clase
+*/
+class Mago extends Personaje {
+  constructor(nombre, vida, ataque, magia){
+    super(nombre, vida, ataque);
+    this.magia = magia;
+  }
+
+  lanzarHechizo(){
+    return `${this.nombre} lanza un hechizo de ${this.magia}`;
+  }
+}
+
+let mago1 = new Mago("Gandalf", 100, 50, "Fuego");
+console.log(mago1.lanzarHechizo());
+
+/*
+  Realiza un videojuego utilizando clases y herencia.
+  Este videojuego debe tener las siguientes clases:
+  - Personaje
+    - Propiedades: nombre, vida, ataque, defensa, velocidad
+    - Metodos: Atacar, Saludar
+  - Mago
+    - Propiedades: hechizos (array de hechizos, cada hechizo tiene un nombre y un daño)
+    ejemplo de hechizo: {nombre: "Fuego", daño: 50}
+    - Metodos: Lanzar hechizo (seleccionar un hechizo aleatoriamente)
+  - Guerrero
+    - Propiedades: armas (array de armas, cada arma tiene un nombre y un daño)
+    - Metodos: Atacar con arma (seleccionar un arma aleatoriamente)
+    ejemplo de arma: {nombre: "Espada", daño: 30}
+  - Arquero
+    - Propiedades: flechas (array de flechas)
+    - Metodos: Disparar flecha
+
+  Debes de crear 5 personajes, 2 magos, 2 guerreros y 1 arquero.
+  Cada personaje debe de tener una vida, un ataque diferente, una defensa, velocidad aleatoria.
+
+  Crea un loop que permita a cada personaje atacar a otro personaje.
+  Al momento de realizar un ataque, el personaje que fue atacado debe de defenderse.
+
+  Cada vez que un personaje ataque a otro, se debe de imprimir el nombre del personaje que ataca,
+
+  Para calcular el daño que un personaje recibe se debe utilizar la siguiente formula:
+  Daño = (%Ataque del atacante) - (%Defensa del atacado)
+
+  Nota: El daño no puede ser menor a 0, y el ataque y defensa es un numero aleatorio entre
+  0 y el valor de ataque o defensa del personaje.
+
+  Cada vez que un personaje ataque a otro, se debe de imprimir el daño que recibe el personaje atacado
+  y quien ataca y quien es el atacado.
+  
+  Cuando un personaje ataca a otro, cada personaje debe atacar una vez al menos (Rondas),
+  sin embargo, el orden de cada ronda se determina aleatoriamente imprimiendo un numero
+  entre 0 y su velocidad.
+
+  Cuando la vida de un personaje llega a 0, se debe de imprimir que el personaje ha muerto.
+  y no puede seguir atacando.
+
+  Al final solo debe de quedar un personaje en pie.
+
+  Y debes imprimir un mensaje diciendo quien ha ganado.
+
+  Cada personaje realizara una acción aleatoria, es decir. Aleatoriamente puede atacar (de forma normal),
+  atacar con un hechizo o atacar con un arma. (Según el tipo de personaje).
+
+  Además, a quien ataca también se debe de seleccionar aleatoriamente.
+
+  Puedes utilizar metodos como Math.random() para seleccionar aleatoriamente un numero.
+
+  Math.random devuelve un numero entre 0 y 1, si quieres un numero entre 0 y 10, debes de multiplicar
+  el resultado por 11.
+
+  Math.floor() redondea un numero decimal hacia abajo. Es importante porque Math.random() devuelve
+  numeros decimales.
+
+  Ejemplo:
+  Math.floor(Math.random() * 10) //Devuelve un numero entre 0 y 9
+
+  Opcional:
+  - Que cada personaje tenga una habilidad especial que se pueda activar una vez por juego.
+  - Que cada personaje tenga una probabilidad de esquivar un ataque.
+  - Que cada personaje pueda tener items, estos pueden aumentar sus estadisticas o incluso curar al personaje
+
+
+  Fecha de entrega: 04/11/2024
+*/
