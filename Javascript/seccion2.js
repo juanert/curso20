@@ -1027,3 +1027,4 @@ console.log(mago1.lanzarHechizo());
 
   Fecha de entrega: 04/11/2024
 */
+
