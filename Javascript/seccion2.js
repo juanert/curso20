@@ -873,12 +873,12 @@ for(let producto of compra){
 }
 
 //3
-let contar = false;
+let contar1 = false;
 for(let i = 0; i <= 100; i += 2){
-  if(contar){
+  if(contar1){
     console.log(i);
   }
-  contar = !contar;
+  contar1 = !contar1;
 }
 
 //4
@@ -1027,4 +1027,89 @@ console.log(mago1.lanzarHechizo());
 
   Fecha de entrega: 04/11/2024
 */
+
+//Mensajes de consola
+console.log("Hola, soy un mensaje de consola");
+console.warn("Hola, soy un mensaje de advertencia");
+console.error("Hola, soy un mensaje de error");
+
+/*
+
+  1. Crea un juego de piedra papel o tijera utilizando
+  funciones y ciclos.
+
+  El juego debe permitir al usuario seleccionar una opcion
+  y la computadora seleccionara una opcion aleatoria.
+
+  Las opciones son:
+  - Piedra
+  - Papel
+  - Tijera
+
+  Las reglas son:
+  - La piedra aplasta la tijera
+  - La tijera corta el papel
+  - El papel envuelve la piedra
+
+  El juego debe de imprimir quien gano y si el usuario
+  desea seguir jugando.
+
+  El juego debe de terminar cuando el usuario seleccione
+  que no desea seguir jugando.
+
+  Ademas debes de tener un contador que indique cuantas
+  partidas se han jugado, cuantas ha ganado el usuario
+  y cuantas la computadora.
+
+  Puedes utilizar la funcion prompt() para obtener la
+  seleccion del usuario.
+
+  2. Crea un juego de adivinar un numero aleatorio
+  entre 1 y 100.
+
+  El juego debe de permitir al usuario ingresar un numero
+  y la computadora debe de generar un numero aleatorio
+  entre 1 y 100.
+
+  El juego debe de imprimir si el numero ingresado por
+  el usuario es mayor, menor o igual al numero generado
+  por la computadora.
+
+  El juego debe de terminar cuando el usuario adivine
+  el numero.
+
+  Ademas debes de tener un contador que se reste uno cada
+  vez que el usuario ingrese un numero.
+
+  El usuario debe de tener un maximo de 6 intentos para
+  adivinar el numero.
+
+  3. Crea un programa orientado a objetos que sea un gestor
+  de tareas.
+
+  El programa debe de tener las siguientes clases:
+  - Tarea
+    - Propiedades: nombre, descripcion, fecha, completada
+
+  - ListaTareas
+    - Propiedades: tareas (array de tareas)
+    - Metodos: Agregar tarea(tarea), Completar tarea(tarea), Eliminar tarea(tarea), 
+    ver tareas()
+
+  El programa debe de permitir al usuario agregar tareas,
+  completar tareas y eliminar tareas. Ademas debe de permitir
+  al usuario ver todas las tareas. 
+
+  El programa debe de tener un menu que permita al usuario
+  seleccionar una opcion.
+
+  El programa debe de terminar cuando el usuario seleccione
+  salir.
+
+  debes usar alert() y prompt() para interactuar con el usuario.
+
+
+  Fecha de entrega: 13/11/2024
+
+  */
 
