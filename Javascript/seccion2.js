@@ -926,6 +926,7 @@ class Personaje {
     this.ataque = ataque;
   }
 
+
   decirInformacion(){
     return `Hola soy, ${this.nombre}, tengo ${this.vida} de vida y mi ataque es de ${this.ataque}`;
   }
