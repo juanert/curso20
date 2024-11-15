@@ -1,4 +1,4 @@
-function saludar(){
+function saludar() {
   alert("Hola desde la sección 3");
 }
 
@@ -14,8 +14,8 @@ boton.addEventListener("click", saludar);
 let input = document.getElementById("input");
 
 //Configurar que el evento se ejecute cuando presiono la tecla "Enter"
-input.addEventListener("keydown", function(event){
-  if(event.key == "Enter"){
+input.addEventListener("keydown", function (event) {
+  if (event.key == "Enter") {
     saludar();
   }
 });
@@ -23,17 +23,17 @@ input.addEventListener("keydown", function(event){
 let videos = [
   {
     titulo: "Video 1",
-    duracion: 30
+    duracion: 30,
   },
   {
     titulo: "Video 2",
-    duracion: 40
+    duracion: 40,
   },
   {
     titulo: "Video 3",
-    duracion: 50
-  }
-]
+    duracion: 50,
+  },
+];
 /**
  * Input de búsqueda
  */
@@ -49,10 +49,10 @@ let searchButton = document.getElementById("searchButton");
  * @description Busca un video en el array de videos
  * @returns {void}
  */
-function buscarVideo(){
+function buscarVideo() {
   let searchValue = search.value;
-  let result = videos.filter(video => video.titulo == searchValue);
-  if(result.length > 0){
+  let result = videos.filter((video) => video.titulo == searchValue);
+  if (result.length > 0) {
     alert("Video encontrado: " + result[0].titulo);
   } else {
     alert("Video no encontrado");
@@ -67,8 +67,8 @@ searchButton.addEventListener("click", buscarVideo);
 /**
  * Ejecutar funcion si se presiona enter
  */
-search.addEventListener("keydown", function(evento){
-  if(evento.key == "Enter"){
+search.addEventListener("keydown", function (evento) {
+  if (evento.key == "Enter") {
     buscarVideo();
   }
 });
@@ -86,7 +86,7 @@ search.addEventListener("keydown", function(evento){
  * @param {Function} filtro
  * @returns {Array}
  */
-function filtrarVideos(videos, filtro){
+function filtrarVideos(videos, filtro) {
   return videos.filter(filtro);
 }
 
@@ -96,7 +96,7 @@ function filtrarVideos(videos, filtro){
  * @param {Array} array
  * @returns {Boolean}
  */
-function validarLongitudArray(array){
+function validarLongitudArray(array) {
   return array.length > 0;
 }
 
@@ -105,9 +105,9 @@ function validarLongitudArray(array){
  * @description Imprime el resultado de la búsqueda
  * @returns {void}
  */
-function imprimirResultado(){
-  let result = filtrarVideos(videos, video => video.titulo == search.value);
-  if(validarLongitudArray(result)){
+function imprimirResultado() {
+  let result = filtrarVideos(videos, (video) => video.titulo == search.value);
+  if (validarLongitudArray(result)) {
     alert("Su video fue encontrado");
   } else {
     alert("No se encontró ningún video");
@@ -119,6 +119,13 @@ function imprimirResultado(){
  * - Programación orientada a eventos
  * - Programación funcional
  * - Programación orientada a objetos
- * 
+ *
  * Nota: La programación orientada a eventos debe tener interfaz gráfica
+ */
+
+/**
+ * Más ejercicios de programacion funcional, programacion orientada a eventos y programacion orientada a objetos
+ * 1) Crea una lista de tarea en donde puedas agregar, eliminar, editar y marcar como completada una tarea
+ * 2) Crea un conversor de divisas en donde puedas convertir de una divisa a otra
+ * 3) Crea un juego de memoria en donde puedas emparejar cartas
  */
