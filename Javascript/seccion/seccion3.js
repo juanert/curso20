@@ -129,3 +129,92 @@ function imprimirResultado() {
  * 2) Crea un conversor de divisas en donde puedas convertir de una divisa a otra
  * 3) Crea un juego de memoria en donde puedas emparejar cartas
  */
+
+/**
+ * Expresiones regulares
+ * Son una herramienta que permite realizar validaciones de strings
+ * Estructura de una expresión regular: /patrón/modificadores
+ */
+
+let texto = "Hola mundo";
+let expresion = /mundo/;
+console.log(expresion.test(texto));
+
+let nombre = "Juan1";
+let expresionNombre = /[A-Za-z]/;
+console.log(expresionNombre.test(nombre));
+
+let nombreCompleto = "Juan Pérez";
+let expresionNombreCompleto = /[A-Za-záéíóú\s]/;
+console.log(expresionNombreCompleto.test(nombreCompleto));
+
+let email = "hola@hola.com";
+let expresionEmail = /[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,8}/;
+console.log(expresionEmail.test(email));
+
+let telefono = "12345678900";
+let expresionTelefono = /\d{10}/;
+console.log(expresionTelefono.test(telefono));
+
+let fecha = "12/12/2021";
+let expresionFecha = /\d{2,2}\/\d{2,2}\/\d{4,4}/;
+console.log(expresionFecha.test(fecha));
+
+//Contraseña con minimo una letra miniscula, mayuscula, un numero, un caracter especial y minimo 8 caracteres
+let password = "Aa1@123456";
+let expresionPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,32}$/;
+console.log(expresionPassword.test(password));
+
+"hola" == "Hola"
+
+let saludo = "Hola";
+let saludoRegex = /hola/i;
+console.log(saludoRegex.test(saludo));
+
+/**
+ * Importar y exportar módulos
+ * Permite dividir el código en diferentes archivos
+ * Exportar: Se exporta una variable, función o clase
+ * Importar: Se importa una variable, función o clase
+ */
+
+let funcion = () => {
+  console.log("Hola");
+};
+
+let data = "Hola";
+
+//Node.js
+export { funcion, data };
+
+//Vanilla JS
+//module.exports = { funcion, data };
+
+/**
+ * 1)
+ * Proyectos para la sección 3
+ * Crea un formulario de registro que pidan los siguientes datos:
+ * - Nombre
+ * - Apellido
+ * - Correo electrónico
+ * - Contraseña
+ * - Confirmar contraseña
+ * 
+ * Validaciones:
+ * - Nombre y apellido: Solo letras y espacios
+ * - Correo electrónico: Debe tener un formato válido
+ * - Contraseña: Mínimo una letra minúscula, una mayúscula, un número, un caracter especial (!$-_.,) y mínimo 8 caracteres
+ * - Confirmar contraseña: Debe ser igual a la contraseña
+ * 
+ * Debes crear una interfaz gráfica para el formulario y mostrar mensajes de error en caso de que el
+ * usuario ingrese datos incorrectos.
+ * 
+ * 2) Crea una lista de tareas en donde puedas agregar, eliminar, editar y marcar como completada una tarea
+ * Debe de tener una interfaz gráfica
+ * 
+ * 3) Crea un juego de piedra papel o tijera en donde puedas jugar contra la computadora,
+ * que te muestre la cantidad de victorias, derrotas, empates y un historial de las ultimas
+ * 5 partidas jugadas (debe mostrar que jugaste, que jugó la computadora)
+ * 
+ * Fecha de entrega: 22 de noviembre
+ */
