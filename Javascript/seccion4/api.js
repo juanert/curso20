@@ -31,13 +31,11 @@ function renderizarPersonajes(personajes) {
       <div class="personaje">
         <img src="${personaje.image}" alt="${personaje.name}">
         <h2>${personaje.name}</h2>
+        <h3>${personaje.status}</h3>
       </div>
     `;
   });
   contenedor.innerHTML = html;
 }
 
-numero = 1;
-numero += 1;
-numero = numero + 1;
 cargarDatos();
