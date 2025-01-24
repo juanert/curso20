@@ -10,4 +10,8 @@ export { default as Title } from "./general/Title";
 export { default as Subtitle } from "./general/Subtitle";
 export { default as Paragraph } from "./general/Paragraph";
 
+//Movies
+export { default as MovieCard } from "./movies/MovieCard";
+export { default as Pagination } from "./movies/Pagination";
+
 
