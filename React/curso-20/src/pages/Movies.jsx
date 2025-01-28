@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MovieCard, Pagination } from "../components/components";
+import useFetch  from "./../hooks/useFetch";
 
 function Movies() {
-  const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
 
@@ -14,25 +14,23 @@ function Movies() {
     },
   };
 
-  useEffect(() => {
-    fetch(`https://moviesdatabase.p.rapidapi.com/titles?page=${page}`, header)
-      .then((response) => response.json())
-      .then((response) => setData(response))
-      .catch((err) => console.error(err));
-  }, [page]);
+  const { data, loading } = useFetch(
+    `https://moviesdatabase.p.rapidapi.com/titles/get-top-rated?page=${page}`,
+    header
+  );
 
+  /*
+  Debe ser reemplazado por el hook useFetch
   const searchMovie = () => {
     fetch(`https://moviesdatabase.p.rapidapi.com/titles/search/title/${search}`, header)
       .then((response) => response.json())
       .then((response) => setData(response))
       .catch((err) => console.error(err));
-  }
-
-
+  }*/
 
   console.log(data);
 
-  if (!data.results) {
+  if (loading) {
     return <h1>Loading...</h1>;
   }
 
@@ -46,7 +44,7 @@ function Movies() {
         placeholder="Search"
         className="border p-2 rounded-xl"
       />
-      <button onClick={searchMovie} className="bg-blue-600 text-white px-4 py-2 rounded-xl">
+      <button  className="bg-blue-600 text-white px-4 py-2 rounded-xl">
         Buscar
       </button>
       <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 p-8">
