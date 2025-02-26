@@ -1,4 +1,6 @@
 import time
+#Importar regex
+import re
 
 #Comentario de una sola linea
 '''
@@ -340,3 +342,67 @@ print(time.strftime("%d/%m/%Y"))
 
   Fecha de entrega: 06/02/25
 """
+
+#Clases
+class Persona:
+  def __init__(self, nombre, apellido):
+    self.nombre = nombre
+    self.apellido = apellido
+
+  def saludar(self):
+    print(f"Hola {self.nombre} {self.apellido}")
+
+juan = Persona("Juan", "Perez")
+juan.saludar()
+
+#Herencia
+class Empleado(Persona):
+  def __init__(self, nombre, apellido, salario):
+    try:
+      super().__init__(nombre, apellido)
+      self.salario = salario
+    except:
+      print("Ocurrio un error --> ")
+
+  def mostrar_salario(self):
+    print(f"Salario: {self.salario}")
+
+try:
+  empleado = Empleado("Pedro", "Gomez")
+  empleado.saludar()
+  empleado.mostrar_salario()
+except:
+  print("Ocurrio un error")
+
+#Validar un correo
+correo = "hola@gmail.com"
+patron = "[a-zA-Z0-9]+@[a-zA-Z]+\.(com|net|org)"
+if re.match(patron, correo):
+  print("Correo valido")
+
+"""
+  Crea un programa orientado a objetos que sea un sistema de tareas, el programa debe tener las siguientes opciones:
+  1) - Agregar una tarea
+  2) - Eliminar una tarea
+  3) - Ver todas las tareas
+  4) - Marcar una tarea como completada
+  5) - Ver tareas completadas
+  6) - Ver tareas pendientes
+  7) - Modificar una tarea
+  8) - Salir
+
+  Las tareas deben de ser guardar en un archivo de texto y cada tarea debe de tener los siguientes atributos:
+  - Titulo
+  - Descripcion
+  - Completada
+
+  Una vez que se agregue una tarea se debe mostrar un mensaje de "Tarea agregada correctamente"
+
+  Debes de utilizar clases, funciones, loops y condicionales o metodos de listas y diccionarios.
+
+  Ademas debes de utilizar regex para validar la informacion y que no se permitan caracteres extraños como
+  $%&/()=
+
+  Las tareas deben ser cargadas directamente del archivo de tareas.txt
+"""
+
