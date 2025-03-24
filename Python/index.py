@@ -405,4 +405,3 @@ if re.match(patron, correo):
 
   Las tareas deben ser cargadas directamente del archivo de tareas.txt
 """
-
